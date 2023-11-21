@@ -1,0 +1,77 @@
+body {
+    font-family: 'roboto', sans-serif;
+    background-image: url(/images/Wolf_section-5-blur.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+
+img {
+    width: 50%
+}
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+#cyprian {
+    text-decoration: underline;
+    color: #FFF
+}
+
+.button-52, h1 {
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    border-radius: 0.375rem;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+.cat {
+    z-index: 2;
+    opacity: 90%;
+}
+.button-52:after, h1:after {
+    content: "";
+    background-color: #000000;
+    width: 100%;
+    z-index: -1;
+    border-radius: 0.375rem;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    right: 7px;
+    transition: 0.3s;
+}
+.button-52:hover:after {
+    top: 0px;
+    right: 0px;
+}
+
+
+@media (min-width: 768px) {
+    .button-52 {
+        padding: 13px 50px 13px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cat {
+        width : 65%;
+        margin-bottom : 5%;
+    }
+    .button-52 {
+        padding: 13px 10px 13px;
+    }
+}

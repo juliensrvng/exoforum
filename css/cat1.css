@@ -1,0 +1,123 @@
+body {
+    font-family: 'roboto', sans-serif;
+    background-image: url(/images/Wolf_section-6-blur.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.button-52, h1 {
+    padding: 13px 20px 13px;
+    outline: 0;
+    border: 1px solid black;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    border-radius: 0.375rem;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-52:after, h1:after {
+    content: "";
+    background-color: #000000;
+    width: 100%;
+    z-index: -1;
+    border-radius: 0.375rem;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    right: 7px;
+    transition: 0.3s;
+}
+.button-52:hover:after {
+    top: 0px;
+    right: 0px;
+}
+.cat {
+    z-index: 2;
+}
+
+@media (min-width: 768px) {
+    .button-52 {
+        padding: 13px 50px 13px;
+    }
+}
+
+button a {
+    text-decoration: none;
+    color : #FFF;
+}
+
+img {
+    width : 25%;
+}
+tr th {
+    color : #000;
+}
+table,
+td, th {
+  border: 1px solid #333;
+}
+
+th, td {
+    text-align: center;
+    width : 30%;
+}
+
+.first {
+    width : 10%;
+}
+
+.off {
+    display : none;
+}
+
+table {
+    width: 75%;
+}
+
+.off {
+    display : none;
+}
+
+#titreTd:hover, #voir:hover, #sujet:hover , .sujet:hover{
+    cursor: pointer;
+    color : #000;
+    background-color: #ced4da;
+}
+
+@media only screen and (max-width: 768px) {
+    .mx-5 {
+        margin-left: 0px!important;
+        margin-right: 0px!important;
+    }
+    #ajoutTopic {
+        flex : 0 0 auto;
+        width: 83.333333%;
+    }
+    .menu {
+        display: none;
+    }
+    .menuBurger, .on {
+        display: block;
+    }
+    .button-52 {
+        padding: 13px 10px 13px;
+    }
+    
+}
+#cyprian, #menuBurger {
+    color : #FFF
+}
+
+.row {
+    --bs-gutter-x: 0rem;
+}
