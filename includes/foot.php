@@ -1,6 +1,6 @@
 <footer>
         <div class="text-center text-light bg-black mt-5 p-1"> Copyrights photos : <a
-                href="https://www.framedcyprian.com/">@FramedCyprian</a></div>
+                href="https://www.framedcyprian.com/" class="text-white">@FramedCyprian</a></div>
     </footer>
 
 
