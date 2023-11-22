@@ -4,7 +4,7 @@ require_once "../includes/connectDB.php";
 $con = connectdb();
 
 //on vérifie si les champs sont remplis
-if (isset($_POST['mail_user']) && isset($_POST['mot_de_passe_user']) && isset($_POST['confirm-password']) && isset($_POST['nom_user']) && isset($_POST['prenom_user']) && isset($_POST['pseudo_user'])) {
+if (isset($_POST['mail_user']) && isset($_POST['mot_de_passe_user']) && isset($_POST['confirm-password']) && isset($_POST['nom_user']) && isset($_POST['prenom_user']) && isset($_POST['pseudo_user']) && isset($_FILES['avatar'])) {
 
     //création des variables pour stocker les données des champs
     $mail = $_POST['mail_user'];
@@ -13,6 +13,8 @@ if (isset($_POST['mail_user']) && isset($_POST['mot_de_passe_user']) && isset($_
     $nom = $_POST['nom_user'];
     $prenom = $_POST['prenom_user'];
     $pseudo = $_POST['pseudo_user'];
+    $dossier = '../avatar/';
+    $avatar = $_FILES['avatar']['name'];
     $regNom = '/^([a-zA-Zéè]){3,}$/i';
     $regMdp = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\#\+\-\^\[\]])(?=.{8,})/';
     $stmt = $con->prepare("SELECT * FROM utilisateur WHERE mail_user=?");
@@ -42,9 +44,10 @@ if (isset($_POST['mail_user']) && isset($_POST['mot_de_passe_user']) && isset($_
             echo '<a href="../views/register.php">Revenir à l\'inscription</a>';
         } else if ($password == $confirmPassword) {
             $password_hashed = password_hash($password, PASSWORD_BCRYPT);
+            move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier.$pseudo.$avatar);
             //on fait notre requête sql avec le prepare 
-            $req = $con->prepare('INSERT INTO utilisateur (mail_user,mot_de_passe_user,nom_user,prenom_user,pseudo_user) VALUES (?,?,?,?,?)');
-            $req->execute(array($mail, $password_hashed, $nom, $prenom, $pseudo));
+            $req = $con->prepare('INSERT INTO utilisateur (mail_user,mot_de_passe_user,nom_user,prenom_user,pseudo_user,avatar) VALUES (?,?,?,?,?,?)');
+            $req->execute(array($mail, $password_hashed, $nom, $prenom, $pseudo, $avatar));
             //retour sur le tableau auteur
             header('location: ../views/login.php');
         };
