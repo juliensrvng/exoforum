@@ -1,4 +1,5 @@
-<?php require_once "../includes/head.php" ?>
+<?php require_once "../includes/head.php";
+?>
     <link rel="stylesheet" href="../css/accueil.css">
     <title>Accueil</title>
 </head>
@@ -9,9 +10,11 @@
     <!-- Header End -->
     <div class="text-light text-center">
         <div class="row m-3">
-            <div class="col-4"></div>
+            <div class="col-4">
+                
+            </div>
             <h1 class="text-center text-light col-4">Airsoft Forum</h1>
-            <div class="col-4" id="logOut"><button class="button-52"><a href="../index.php">Se déconnecter</a></button>
+            <div class="col-4" id="logOut"><button class="button-52"><a href="../controller/logoutcontroller.php">Se déconnecter</a></button>
             </div>
         </div>
         <img src="../images/Wolf_section-5.jpg" alt="image d'accueil" class="rounded m-3 border border-dark">

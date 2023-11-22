@@ -2,6 +2,7 @@
 let showMdp = document.getElementById("showMdp");
 let hideMdp = document.getElementById("hideMdp");
 let mdp = document.getElementById("password");
+const form = document.querySelector('#signup');
 
 showMdp.addEventListener("mousedown", function (e) {
     e.preventDefault();
