@@ -5,7 +5,7 @@
 
 <body>
     <div class="container m-5">
-        <form action="../controller/addcontroller.php" method="post" id="signup" class="form rounded row" enctype="multipart/form-data">
+        <form action="../controller/addcontroller.php" method="post" id="signup" class="form rounded row">
             <h1>Formulaire d'inscription</h1>
                 <div class="firstCol col-6">
                     <div class="form-field error success">
@@ -23,10 +23,6 @@
                         <input type="text" name="pseudo_user" id="pseudo" autocomplete="off">
                         <span>(seul votre pseudo sera visible par les autres membres)</span>
                         <small></small>
-                    </div>
-                    <div>
-                        <label for="avatar">Sélectionnez un avatar</label><br>
-                        <input type="file" name="avatar">
                     </div>
                 </div>
                 <div class="secondCol col-6">

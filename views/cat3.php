@@ -27,7 +27,7 @@
                 <tr class="bg-secondary-subtle">
                     <th class="first">#</th>
                     <th>Sujet</th>
-                    <th>Dernier Commentaire</th>
+                    <th>Date de création</th>
                     <th colspan="2">Auteur</th>
                 </tr>
             </thead>

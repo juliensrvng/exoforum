@@ -13,13 +13,11 @@
     <div class="text-light text-center">
         <div class="row m-3">
             <div class="col-4">
-                <img src="../avatar/<?php echo $avatar['avatar']?>" id="avatar" alt=""><br>
-                <button><a href="../views/profile.php" class="text-black">Modifier Avatar</a></button>
-            </div>
-            <h1 class="text-center text-light col-4">Airsoft Forum</h1>
-            <div class="col-4" id="logOut"><button class="button-52"><a href="../controller/logoutcontroller.php">Se déconnecter</a></button>
-            </div>
-        </div>
+                <img src="../avatar/<?php echo $avatar['avatar']?>" id="avatar" alt="avatar" class="rounded"><br>
+                <button><a href="../views/profile.php?id=<?php echo $_SESSION['pseudo'] ?>" class="text-black">Modifier Avatar</a></button>
+    <!-- Bandeau Start -->
+    <?php require_once "../includes/bandeau.php" ?>
+    <!-- Bandeau End -->
         <img src="../images/Wolf_section-5.jpg" alt="image d'accueil" class="rounded m-3 border border-dark">
         <div class="row d-flex m-3 justify-content-evenly">
             <div class="cat col-3 border border-white rounded bg-secondary-subtle text-dark p-3">

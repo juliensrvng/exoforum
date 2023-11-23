@@ -27,7 +27,7 @@
                 <tr class="bg-secondary-subtle">
                     <th class="first">#</th>
                     <th>Sujet</th>
-                    <th>Dernier Commentaire</th>
+                    <th>Date de création</th>
                     <th colspan="2">Auteur</th>
                 </tr>
             </thead>
@@ -38,7 +38,7 @@
                     // var_dump($lignes1);
                     echo '<tr class="text-center">
             <td class="border-3 p-2">' . $ligne1['identifiant_sujet'] . '</td>
-            <td class="border-3 p-2" id="sujet"><a href="../views/sujet.php?id=' . $ligne1['identifiant_sujet'] . '">' . $ligne1['nom_sujet'] . '</a></td>
+            <td class="border-3 p-2" id="sujet"><a id="sujet" href="../views/sujet.php?id='.$ligne1['identifiant_sujet'].'">'.$ligne1['nom_sujet'].'</a></td>
             <td class="border-3 p-2">' . $ligne1['date_sujet'] . '</td>
             <td class="border-3 p-2">' . $ligne1['pseudo_user'] . '</td>
             </tr>';
