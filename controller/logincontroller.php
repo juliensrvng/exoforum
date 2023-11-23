@@ -21,8 +21,9 @@ if (isset($_POST['mail_user']) && isset($_POST['mot_de_passe_user'])) {
     $stmt->execute([$mail]);
     $login = $stmt->fetch();
     if (!$login) {
-        echo "L'identifiant ne correspond pas.<br>";
-        echo "<a href=../views/login.php>Revenir à la page de connexion.</a>";
+        //echo "L'identifiant ne correspond pas.<br>";
+        //echo "<a href=../views/login.php>Revenir à la page de connexion.</a>";
+        header('location: ../views/login.php?erreur=1');
         //echo var_dump($_SESSION);
     } else if (!password_verify($password, $rowMdp['0'])){
         echo "Le mot de passe ne correspond pas.<br>";

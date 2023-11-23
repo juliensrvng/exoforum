@@ -19,8 +19,17 @@ hideMdp.addEventListener("mousedown", function (e) {
 });
 
 form.addEventListener('submit', function (e) {
+
         let day = new Date ();
         localStorage.setItem("heureCo", day.toLocaleTimeString())
     }
 
 );
+
+//Déjà connecté
+window.onload = (e) => {
+    if (localStorage.getItem("heureCo") != null) {
+        alert("Vous vous êtes déjà connecté.\nRetour à la page d'accueil.");
+        window.location.href="../views/accueil.php";
+    }
+};

@@ -10,12 +10,12 @@
             <h1 class="mb-5">Se connecter</h1>
             <div class="form-field error success">
                 <label for="mail_user">Email:</label>
-                <input type="text" name="mail_user" id="email" autocomplete="off">
+                <input type="text" name="mail_user" id="mail_user" autocomplete="off">
                 <small></small>
             </div>
             <div class="form-field error success">
                 <label for="mot_de_passe_user">Mot de passe</label>
-                <input type="password" name="mot_de_passe_user" id="password" autocomplete="off">
+                <input type="password" name="mot_de_passe_user" id="mot_de_passe_user" autocomplete="off">
                 <button id="showMdp" class="p-2">Afficher le mot de passe</button>
                 <button id="hideMdp" class="p-2 off">Cacher le mot de passe</button><br>
                 <small></small>

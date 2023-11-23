@@ -27,7 +27,7 @@ if (isset($_POST['message'])) {
     $req->execute(array($idSujet,$idUser['0'],$message,$dateMessage));
 
     //retour sur le tableau auteur
-    header('location: ../views/sujet.php?id='.$idSujet.'.php');
+    header('location: ../views/sujet.php?id='.$idSujet);
     //echo var_dump($date);
 };
 
