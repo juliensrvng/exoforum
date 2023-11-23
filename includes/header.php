@@ -1,7 +1,5 @@
 <?php session_start();
-if (!$_SESSION['pseudo']) {
-    header('location: ../views/login.php');
-} else { 
+
     
     ?>
 
@@ -12,4 +10,3 @@ if (!$_SESSION['pseudo']) {
         <div class="heure text-end">Dernière connexion à : <span id="heure"></span></div>
 </header>
 
-<?php } ?>

@@ -29,32 +29,41 @@
                 <tr class="bg-secondary-subtle">
                     <th class="first">Auteur</th>
                     <th>Sujet</th>
-                    <th colspan="2">posté le</th>
+                    <th colspan="3">posté le</th>
                 </tr>
             </thead>
             <tbody id="tbodyTopic" class="bg-black">
                 <tr>
                     <td id="auteur" rowspan="2"><img src="../avatar/<?php echo $sujet['avatar'] ?>" id="avatar" alt="avatar" class="rounded"><br><?php echo $sujet['pseudo_user'] ?></td>
                     <td id="titreSujet" class="titreLi"><?php echo $sujet['nom_sujet'] ?></td>
-                    <td id="heureSujet" class="text-end" colspan="2"><?php echo $sujet['date_sujet'] ?></td>
+                    <td id="heureSujet" class="text-end" colspan="3"><?php echo $sujet['date_sujet'] ?></td>
                 </tr>
                 <tr id="message">
-                    <td colspan="3" class="text-start" id="messTd"><?php echo $sujet['messageSujet'] ?></td>
+                    <td colspan="4" class="text-start" id="messTd"><?php echo $sujet['messageSujet'] ?></td>
                 </tr>
                 <?php
                 //boucle foreach pour afficher chaque ligne de la requête
                 foreach ($messages as $message) {
                     echo '<tr class="text-center">            
-                    <td class="text-center" rowspan="2"><img src="../avatar/' . $message['avatar'] . '" id="avatar" alt="avatar" class="rounded"><br>' . $message['pseudo_user'] . '</td>
+                    <td class="text-center" rowspan="3"><img src="../avatar/' . $message['avatar'] . '" id="avatar" alt="avatar" class="rounded"><br>' . $message['pseudo_user'] . '</td>
                     <td>' . $sujet['nom_sujet'] . '</td>
-                    <td id="heureSujet" class="text-end pe-2" colspan="2">' . $message['date_message'] . '</td>
+                    <td id="heureSujet" class="text-end pe-2" colspan="3">' . $message['date_message'] . '</td>
                     </tr>
                     ';
                     
                     if ($message['pseudo_user'] == $_SESSION['pseudo']) { 
                     echo'<tr>
-                    <td class="text-start" colspan="2">' . $message['message'] . '</td> 
-                    <td colspan="2">
+                    <td class="text-start" colspan="3" rowspan="2">' . $message['message'] . '</td>                     
+                    <td>
+                    <form action="../views/editMess.php?id='. $message['identifiant_message'] . '" method="post">
+                    <input type="hidden" name="idSujet" value="' . $message['identifiant_sujet'] . '"><br>
+                    <input type="hidden" name="idMess" value="' . $message['identifiant_message'] . '"><br>
+                    <input type="submit" value="Modifier le message">
+                    </form>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td >
                     <form action="../controller/deleteMessController.php" method="post">
                     <input type="hidden" name="idSujet" value="' . $message['identifiant_sujet'] . '"><br>
                     <input type="hidden" name="idMess" value="' . $message['identifiant_message'] . '"><br>
@@ -72,10 +81,6 @@
             </tbody>
         </table>
     </div>
-    <form action="../controller/deleteMessController.php" method="post">
-                    <input type="text" name="idMess" value="64" disabled><br>
-                    <input type="submit" value="Supprimer le message">
-                    </form>
     <div id="formTopic" class="justify-content-center row">
         <form action="../controller/addmesscontroller.php" method="POST" id="ajoutTopic" class="d-flex flex-column mx-5 border border-white rounded col-6">
             <div class="row mx-5">
