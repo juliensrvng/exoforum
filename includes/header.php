@@ -1,5 +1,7 @@
 <?php session_start();
-
+    if (!$_SESSION['pseudo']){
+        header('location: ../views/login.php?erreur=7');
+    }
     
     ?>
 

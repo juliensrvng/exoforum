@@ -1,6 +1,6 @@
 body {
     font-family: 'roboto', sans-serif;
-    background-image: url(/images/Wolf_section-81-blur.jpg);
+    background-image: url(/images/Wolf_section-6-blur.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -63,13 +63,12 @@ tr th {
     color : #000;
 }
 table,
-td, th {
+td, th, tr th {
   border: 1px solid #333;
 }
 
 th, td {
     text-align: center;
-    width : 30%;
 }
 
 .first {
@@ -117,6 +116,7 @@ table {
 #cyprian, #menuBurger {
     color : #FFF
 }
+
 .row {
     --bs-gutter-x: 0rem;
 }

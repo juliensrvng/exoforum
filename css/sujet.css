@@ -69,14 +69,18 @@ table,
 td, th {
   border: 1px solid #333;
 }
-
+#avatar {
+    width : 40%;
+}
 th, td {
     text-align: center;
-    width : 30%;
-}
 
-.first {
+}
+td:last-child{
     width : 10%;
+}
+.first {
+    width : 20%;
 }
 
 table {
