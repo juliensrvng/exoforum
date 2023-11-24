@@ -8,7 +8,7 @@ $req1 = 'SELECT *
         FROM sujet
         INNER JOIN utilisateur ON utilisateur.identifiant_user = sujet.identifiant_user
         WHERE identifiant_catégorie = 1
-        ORDER BY identifiant_sujet';
+        ORDER BY sujet.identifiant_sujet';
 $responseSujet = $con->query($req1);
 $lignes1 = $responseSujet->fetchAll();
 

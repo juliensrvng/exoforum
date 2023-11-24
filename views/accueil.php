@@ -1,5 +1,4 @@
 <?php require_once "../includes/head.php";
-
 ?>
     <link rel="stylesheet" href="../css/accueil.css">
     <title>Accueil</title>
@@ -14,7 +13,7 @@
         <div class="row m-3">
             <div class="col-4">
                 <img src="../avatar/<?php echo $avatar['avatar']?>" id="avatar" alt="avatar" class="rounded"><br>
-                <button><a href="../views/profile.php?id=<?php echo $_SESSION['pseudo'] ?>" class="text-black">Modifier Avatar</a></button>
+                <button><a href="../views/profil.php?id=<?php echo $_SESSION['pseudo'] ?>" class="text-black">Voir profil</a></button>
     <!-- Bandeau Start -->
     <?php require_once "../includes/bandeau.php" ?>
     <!-- Bandeau End -->

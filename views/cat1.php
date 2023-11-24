@@ -40,7 +40,7 @@
             <td class=" p-2">' . $ligne1['identifiant_sujet'] . '</td>
             <td class=" p-2" id="sujet"><a id="sujet" href="../views/sujet.php?id='.$ligne1['identifiant_sujet'].'">'.$ligne1['nom_sujet'].'</a></td>
             <td class=" p-2">' . $ligne1['date_sujet'] . '</td>
-            <td class=" p-2">' . $ligne1['pseudo_user'] . '</td>
+            <td class=" p-2" id="sujet"><a id="sujet" href="../views/profil.php?id=' . $ligne1['pseudo_user'] . '">'. $ligne1['pseudo_user'] . '</a></td>
             </tr>';
                 }
                 ?>

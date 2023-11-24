@@ -16,7 +16,9 @@ footer {
 img {
     width: 50%
 }
-
+#avatar {
+    width: 100px;
+}
 a {
     text-decoration: none;
     color: #FFF;
@@ -28,7 +30,7 @@ a {
 }
 
 #avatar {
-    width: 100px;
+    width: 200px;
 }
 
 .button-52, h1 {
@@ -63,6 +65,31 @@ a {
     right: 0px;
 }
 
+tr th {
+    color : #000;
+}
+table,
+td, th {
+  border: 1px solid #333;
+}
+
+th, td {
+    text-align: center;
+
+}
+td:nth-child(2) {
+    width : 50%;
+}
+td:last-child {
+    width : 10%;
+}
+.first {
+    width : 20%;
+}
+
+table {
+    width: 75%;
+}
 
 @media (min-width: 768px) {
     .button-52 {

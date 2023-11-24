@@ -37,10 +37,10 @@
                 foreach ($lignes3 as $ligne3) {
                     // var_dump($lignes1);
                     echo '<tr class="text-center">
-            <td class="border-3 p-2">' . $ligne3['identifiant_sujet'] . '</td>
-            <td class="border-3 p-2" id="sujet"><a id="sujet" href="../views/sujet.php?id=' . $ligne3['identifiant_sujet'] . '">' . $ligne3['nom_sujet'] . '</a></td>
-            <td class="border-3 p-2">' . $ligne3['date_sujet'] . '</td>
-            <td class="border-3 p-2">' . $ligne3['pseudo_user'] . '</td>
+            <td class="p-2">' . $ligne3['identifiant_sujet'] . '</td>
+            <td class="p-2" id="sujet"><a id="sujet" href="../views/sujet.php?id=' . $ligne3['identifiant_sujet'] . '">' . $ligne3['nom_sujet'] . '</a></td>
+            <td class="p-2">' . $ligne3['date_sujet'] . '</td>
+            <td class=" p-2" id="sujet"><a id="sujet" href="../views/profil.php?id=' . $ligne3['pseudo_user'] . '">'. $ligne3['pseudo_user'] . '</a></td>
             </tr>';
                 }
                 ?>

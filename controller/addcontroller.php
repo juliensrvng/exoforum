@@ -15,6 +15,12 @@ if (isset($_POST['mail_user']) && isset($_POST['mot_de_passe_user']) && isset($_
     $pseudo = $_POST['pseudo_user'];
     $regNom = '/^([a-zA-Zéè]){3,}$/i';
     $regMdp = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\#\+\-\^\[\]])(?=.{8,})/';
+    $date=getdate(date("U"));
+    $day = $date['mday'];
+    $month = $date['mon'];
+    $year = $date['year'];
+    //création des variables pour stocker les données des champs
+    $datecreation = "$day/$month/$year";
     $stmt = $con->prepare("SELECT * FROM utilisateur WHERE mail_user=?");
     $stmt->execute([$mail]);
     $userMail = $stmt->fetch();
@@ -46,8 +52,8 @@ if (isset($_POST['mail_user']) && isset($_POST['mot_de_passe_user']) && isset($_
         } else if ($password == $confirmPassword) {
             $password_hashed = password_hash($password, PASSWORD_BCRYPT);
             //on fait notre requête sql avec le prepare 
-            $req = $con->prepare('INSERT INTO utilisateur (mail_user,mot_de_passe_user,nom_user,prenom_user,pseudo_user) VALUES (?,?,?,?,?)');
-            $req->execute(array($mail, $password_hashed, $nom, $prenom, $pseudo));
+            $req = $con->prepare('INSERT INTO utilisateur (mail_user,mot_de_passe_user,nom_user,prenom_user,pseudo_user,date_creation) VALUES (?,?,?,?,?,?)');
+            $req->execute(array($mail, $password_hashed, $nom, $prenom, $pseudo, $datecreation));
             //retour sur le tableau auteur
             header('location: ../views/login.php');
         };
