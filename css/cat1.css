@@ -63,13 +63,12 @@ tr th {
     color : #000;
 }
 table,
-td, th {
+td, th, tr th {
   border: 1px solid #333;
 }
 
 th, td {
     text-align: center;
-    width : 30%;
 }
 
 .first {

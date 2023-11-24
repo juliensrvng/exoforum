@@ -11,14 +11,29 @@
             <div class="form-field error success">
                 <label for="mail_user">Email:</label>
                 <input type="text" name="mail_user" id="mail_user" autocomplete="off">
-                <small></small>
+                <?php
+            if (isset($_GET['erreur'])) {
+                $err = $_GET['erreur'];
+                if ($err == 1) {
+                    echo "<p style='color:red'>L'email ne figure pas dans la base de données</p>";
+                }
+            }
+                ?>
             </div>
             <div class="form-field error success">
                 <label for="mot_de_passe_user">Mot de passe</label>
                 <input type="password" name="mot_de_passe_user" id="mot_de_passe_user" autocomplete="off">
+                <?php
+            if (isset($_GET['erreur'])) {
+                $err = $_GET['erreur'];
+                if ($err == 2) {
+                    echo "<p style='color:red'>Le mot de passe ne correspond pas à cet email</p>";
+                }
+            }
+            ?>
                 <button id="showMdp" class="p-2">Afficher le mot de passe</button>
                 <button id="hideMdp" class="p-2 off">Cacher le mot de passe</button><br>
-                <small></small>
+
             </div>
             <div class="form-field error success mt-5">
                 <input type="submit" value="Se connecter" class="btn">
@@ -26,16 +41,18 @@
             <div class="form-field error success">
                 <input type="reset" value="Effacer les champs" class="btn">
             </div>
-            <?php
-            if (isset($_GET['erreur'])) {
-                $err = $_GET['erreur'];
-                if ($err == 1 || $err == 2)
-                    echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-            }
-            ?>
+
             <div class="">
                 <a href="register.php">Je ne suis pas encore inscrit</a>
             </div>
+            <?php
+            if (isset($_GET['erreur'])) {
+                $err = $_GET['erreur'];
+                if ($err == 7) {
+                    echo "<p style='color:red'>Vous devez être connecté pour accéder au forum</p>";
+                }
+            }
+            ?>
         </form>
     </div>
     </div>

@@ -37,10 +37,10 @@
                 foreach ($lignes1 as $ligne1) {
                     // var_dump($lignes1);
                     echo '<tr class="text-center">
-            <td class="border-3 p-2">' . $ligne1['identifiant_sujet'] . '</td>
-            <td class="border-3 p-2" id="sujet"><a id="sujet" href="../views/sujet.php?id='.$ligne1['identifiant_sujet'].'">'.$ligne1['nom_sujet'].'</a></td>
-            <td class="border-3 p-2">' . $ligne1['date_sujet'] . '</td>
-            <td class="border-3 p-2">' . $ligne1['pseudo_user'] . '</td>
+            <td class=" p-2">' . $ligne1['identifiant_sujet'] . '</td>
+            <td class=" p-2" id="sujet"><a id="sujet" href="../views/sujet.php?id='.$ligne1['identifiant_sujet'].'">'.$ligne1['nom_sujet'].'</a></td>
+            <td class=" p-2">' . $ligne1['date_sujet'] . '</td>
+            <td class=" p-2">' . $ligne1['pseudo_user'] . '</td>
             </tr>';
                 }
                 ?>
@@ -54,7 +54,7 @@
                 <label for="nom_sujet" class="mt-3">Titre du sujet</label>
                 <input type="text" class=" mt-3 rounded" id="topic" name="nom_sujet" autocomplete="off" placeholder="Donner un titre à votre sujet"><br>
                 <label for="messageSujet" class="mt-3">Votre Message</label><br>
-                <textarea class="mt-3" name="messageSujet" id="messageTd" placeholder="Notez votre message" rows="5"></textarea>
+                <textarea class="mt-3 rounded" name="messageSujet" id="messageTd" placeholder="Notez votre message" rows="5"></textarea>
                 <br>
                 <input type="submit" value="Ajouter" class="my-3 rounded">
                 <input type="reset" value="Effacer le champ" class=" mb-3 rounded" id="reset">

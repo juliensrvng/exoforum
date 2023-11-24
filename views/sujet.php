@@ -34,13 +34,14 @@
             </thead>
             <tbody id="tbodyTopic" class="bg-black">
                 <tr>
-                    <td id="auteur" rowspan="2"><img src="../avatar/<?php echo $sujet['avatar'] ?>" id="avatar" alt="avatar" class="rounded"><br><?php echo $sujet['pseudo_user'] ?></td>
+                    <td id="auteur" rowspan="3"><img src="../avatar/<?php echo $sujet['avatar'] ?>" id="avatar" alt="avatar" class="rounded"><br><?php echo $sujet['pseudo_user'] ?></td>
                     <td id="titreSujet" class="titreLi"><?php echo $sujet['nom_sujet'] ?></td>
                     <td id="heureSujet" class="text-end" colspan="3"><?php echo $sujet['date_sujet'] ?></td>
                 </tr>
                 <tr id="message">
-                    <td colspan="4" class="text-start" id="messTd"><?php echo $sujet['messageSujet'] ?></td>
+                    <td colspan="4" rowspan="2" class="text-start" id="messTd"><?php echo $sujet['messageSujet'] ?></td>
                 </tr>
+                <tr></tr>
                 <?php
                 //boucle foreach pour afficher chaque ligne de la requête
                 foreach ($messages as $message) {
@@ -54,26 +55,28 @@
                     if ($message['pseudo_user'] == $_SESSION['pseudo']) { 
                     echo'<tr>
                     <td class="text-start" colspan="3" rowspan="2">' . $message['message'] . '</td>                     
-                    <td>
-                    <form action="../views/editMess.php?id='. $message['identifiant_message'] . '" method="post">
-                    <input type="hidden" name="idSujet" value="' . $message['identifiant_sujet'] . '"><br>
-                    <input type="hidden" name="idMess" value="' . $message['identifiant_message'] . '"><br>
-                    <input type="submit" value="Modifier le message">
-                    </form>
-                    </td>
+                        <td>
+                            <form action="../views/editMess.php?id='. $message['identifiant_message'] . '" method="post">
+                            <input type="hidden" name="idSujet" value="' . $message['identifiant_sujet'] . '"><br>
+                            <input type="hidden" name="idMess" value="' . $message['identifiant_message'] . '"><br>
+                            <input type="submit" value="Modifier le message">
+                            </form>
+                        </td>
                     </tr>
                     <tr>
-                    <td >
-                    <form action="../controller/deleteMessController.php" method="post">
-                    <input type="hidden" name="idSujet" value="' . $message['identifiant_sujet'] . '"><br>
-                    <input type="hidden" name="idMess" value="' . $message['identifiant_message'] . '"><br>
-                    <input type="submit" value="Supprimer le message">
-                    </form>
-                    </td>
+                        <td >
+                            <form action="../controller/deleteMessController.php" method="post">
+                            <input type="hidden" name="idSujet" value="' . $message['identifiant_sujet'] . '"><br>
+                            <input type="hidden" name="idMess" value="' . $message['identifiant_message'] . '"><br>
+                            <input type="submit" value="Supprimer le message">
+                            </form>
+                        </td>
                     </tr>';
                 } else {
                     echo '<tr>
-                    <td class="text-start" colspan="3">' . $message['message'] . '</td>
+                    <td class="text-start" colspan="4" rowspan="2">' . $message['message'] . '</td>
+                    </tr>
+                    <tr>
                     </tr>';
                 };
             };
