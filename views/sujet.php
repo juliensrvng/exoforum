@@ -34,7 +34,7 @@
             </thead>
             <tbody id="tbodyTopic" class="bg-black">
                 <tr>
-                    <td id="auteur" rowspan="3"><img src="../avatar/<?php echo $sujet['avatar'] ?>" id="avatar" alt="avatar" class="rounded"><br><?php echo $sujet['pseudo_user'] ?></td>
+                    <td id="auteur" rowspan="3"><a id="sujet" href="../views/profil.php?id=<?php echo $sujet['pseudo_user']?>"><img src="../avatar/<?php echo $sujet['avatar'] ?>" id="avatar" alt="avatar" class="rounded"></a><br><?php echo $sujet['pseudo_user'] ?></td>
                     <td id="titreSujet" class="titreLi"><?php echo $sujet['nom_sujet'] ?></td>
                     <td id="heureSujet" class="text-end" colspan="3"><?php echo $sujet['date_sujet'] ?></td>
                 </tr>
@@ -46,7 +46,7 @@
                 //boucle foreach pour afficher chaque ligne de la requête
                 foreach ($messages as $message) {
                     echo '<tr class="text-center">            
-                    <td class="text-center" rowspan="3"><img src="../avatar/' . $message['avatar'] . '" id="avatar" alt="avatar" class="rounded"><br>' . $message['pseudo_user'] . '</td>
+                    <td class="text-center" rowspan="3"><a id="sujet" href="../views/profil.php?id=' . $message['pseudo_user'] . '"><img src="../avatar/' . $message['avatar'] . '" id="avatar" alt="avatar" class="rounded"></a><br>' . $message['pseudo_user'] . '</td>
                     <td>' . $sujet['nom_sujet'] . '</td>
                     <td id="heureSujet" class="text-end pe-2" colspan="3">' . $message['date_message'] . '</td>
                     </tr>
