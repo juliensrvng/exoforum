@@ -16,10 +16,6 @@ if (isset($_POST['mail_user']) && isset($_POST['mot_de_passe_user']) && isset($_
     $regNom = '/^([a-zA-Zéè]){3,}$/i';
     $regMdp = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\#\+\-\^\[\]])(?=.{8,})/';
     $newDate = new DateTime("now",new DateTimeZone("Europe/Paris"));
-    $date=getdate(date("U"));
-    $day = $date['mday'];
-    $month = $date['mon'];
-    $year = $date['year'];
     //création des variables pour stocker les données des champs
     $datecreation = $newDate->format('Y-m-d');
     $stmt = $con->prepare("SELECT * FROM utilisateur WHERE mail_user=?");
