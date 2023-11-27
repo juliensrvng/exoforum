@@ -40,8 +40,8 @@ if (!empty($_POST)) {	// Si le formulaire a été soumis
             $mail2->Host = 'smtp.laposte.net';  //Sets the SMTP hosts of your Email hosting, this for Godaddy
             $mail2->Port = '465';        //Sets the default SMTP server port
             $mail2->SMTPAuth = true;       //Sets SMTP authentication. Utilizes the Username and Password variables
-            $mail2->Username = ' dwwmmail';     //Sets SMTP username
-            $mail2->Password = 'Test123456789+';     //Sets SMTP password
+            $mail2->Username = ' ';     //Sets SMTP username
+            $mail2->Password = '';     //Sets SMTP password
             $mail2->SMTPSecure = 'ssl';       //Sets connection prefix. Options are "", "ssl" or "tls"
             $mail2->From = 'dwwmmail@laposte.net';   //Sets the From email address for the message
             $mail2->FromName = 'Airsoft Forum';     //Sets the From name of the message
