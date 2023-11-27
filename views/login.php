@@ -35,6 +35,17 @@
                 <button id="hideMdp" class="p-2 off">Cacher le mot de passe</button><br>
 
             </div>
+            <div> 
+                <a href="mdpOublie.php">Mot de passe oublié</a>
+            </div>
+            <?php
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                if ($id == 8) {
+                    echo "<p style='color:green'>Votre mot de passe a bien été modifié</p>";
+                }
+            }
+            ?>
             <div class="form-field error success mt-5">
                 <input type="submit" value="Se connecter" class="btn">
             </div>

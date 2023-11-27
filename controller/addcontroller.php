@@ -49,8 +49,8 @@ if (isset($_POST['mail_user']) && isset($_POST['mot_de_passe_user']) && isset($_
         } else if ($password == $confirmPassword) {
             $password_hashed = password_hash($password, PASSWORD_BCRYPT);
             //on fait notre requête sql avec le prepare 
-            $req = $con->prepare('INSERT INTO utilisateur (mail_user,mot_de_passe_user,nom_user,prenom_user,pseudo_user,date_creation) VALUES (?,?,?,?,?,now())');
-            $req->execute(array($mail, $password_hashed, $nom, $prenom, $pseudo));
+            $req = $con->prepare('INSERT INTO utilisateur (mail_user,mot_de_passe_user,nom_user,prenom_user,pseudo_user,date_creation) VALUES (?,?,?,?,?,?)');
+            $req->execute(array($mail, $password_hashed, $nom, $prenom, $pseudo, $datecreation));
             //retour sur le tableau auteur
             header('location: ../views/login.php');
         };
