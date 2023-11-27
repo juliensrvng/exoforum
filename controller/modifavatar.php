@@ -25,6 +25,6 @@ if (isset($_FILES['avatar'])) {
             // echo var_dump($avatar);
             // echo var_dump($pseudo);
             // echo var_dump($_SESSION);
-            header('location: ../views/profile.php');
+            header('location: ../views/profil.php?id='.$pseudo);
 
 };
