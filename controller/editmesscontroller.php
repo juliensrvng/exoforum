@@ -7,7 +7,8 @@ $con = connectdb();
 if (isset($_POST['idMess'])) {
     $idMess = $_POST['idMess'];
     $idSujet = $_POST['idSujet'];
-
+    $newDate = new DateTime("now",new DateTimeZone("Europe/Paris"));
+    $datecreation = $newDate->format('d-m-Y à H:i:s');
     //requête pour récupérer les données du service par rapport à l'id
     $req = "SELECT * FROM message WHERE identifiant_message = $idMess";
     //application de la requête
@@ -22,7 +23,7 @@ if (isset($_POST['idMess'])) {
             //récupération des valeurs soumises            
             $editmessage = $_POST['editmessage'];
             //mise à jour des données 
-            $reqUpdate = "UPDATE message SET message= '$editmessage' WHERE identifiant_message='$idMess'";
+            $reqUpdate = "UPDATE message SET message= '$editmessage', date_message= '$datecreation' WHERE identifiant_message='$idMess'";
             //on se connecte à la bdd et on exécute notre requête
             $con->exec($reqUpdate);
 
